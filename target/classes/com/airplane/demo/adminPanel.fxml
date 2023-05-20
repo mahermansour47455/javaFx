@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.airplane.demo.AdminPanelController">
+   <children>
+      <Text layoutX="417.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Les vols">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <AnchorPane prefHeight="700.0" prefWidth="154.0" style="-fx-background-color: #154c79;">
+         <children>
+            <GridPane layoutX="24.0" layoutY="91.0" prefHeight="218.0" prefWidth="115.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="200.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="0.0" prefWidth="0.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#listerLesVols" prefHeight="26.0" prefWidth="84.0" text="Les vols" GridPane.halignment="CENTER" />
+                  <Button mnemonicParsing="false" onAction="#listerPassager" prefHeight="26.0" prefWidth="94.0" text="Les passagers" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Button fx:id="BtnReservation" mnemonicParsing="false" onAction="#listerReservation" text="les reservations" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button mnemonicParsing="false" onAction="#lesAeroports" prefHeight="26.0" prefWidth="90.0" text="les aeroports" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+               </children>
+            </GridPane>
+            <Button fx:id="btnLogout" layoutX="51.0" layoutY="651.0" mnemonicParsing="false" onAction="#Logout" text="Logout" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="TablVol" layoutX="173.0" layoutY="206.0" prefHeight="309.0" prefWidth="618.0">
+         <columns>
+            <TableColumn fx:id="colId" prefWidth="30.0" text="ID" />
+            <TableColumn fx:id="ColAd" prefWidth="90.0" text="Areport depart" />
+            <TableColumn fx:id="ColAA" prefWidth="103.0" text="Areport arrivee" />
+            <TableColumn fx:id="ColHD" prefWidth="86.0" text="Heure depart" />
+            <TableColumn fx:id="ColHA" prefWidth="82.0" text="Heure arrivee" />
+            <TableColumn fx:id="ColDD" text="Date depart" />
+            <TableColumn fx:id="ColDA" prefWidth="83.0" text="Date arrivee" />
+            <TableColumn fx:id="etat" prefWidth="63.0" text="Etat" />
+         </columns>
+      </TableView>
+      <Text layoutX="329.0" layoutY="538.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des escales de vol selectionner" />
+      <TableView fx:id="tabEscale" layoutX="329.0" layoutY="554.0" prefHeight="130.0" prefWidth="339.0">
+         <columns>
+            <TableColumn fx:id="AEscale" prefWidth="92.0" text="Aeroport" />
+            <TableColumn fx:id="HAriiver" prefWidth="122.4000244140625" text="Heure arrive" />
+            <TableColumn fx:id="HEscale" prefWidth="124.0" text="Heure depart" />
+         </columns>
+      </TableView>
+      <Text layoutX="404.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Arriver" />
+      <DatePicker fx:id="DateRech" layoutX="395.0" layoutY="114.0" prefHeight="26.0" prefWidth="175.0" />
+      <Button layoutX="349.0" layoutY="152.0" mnemonicParsing="false" onAction="#RechercherParDate" prefHeight="35.0" prefWidth="75.0" text="Rechercher" />
+      <Button layoutX="173.0" layoutY="650.0" mnemonicParsing="false" onAction="#ListerLesEscales" prefHeight="35.0" prefWidth="102.0" text="lister les escales" />
+      <DatePicker fx:id="DateDepartId" layoutX="190.0" layoutY="115.0" />
+      <Text layoutX="202.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Depart" />
+   </children>
+</AnchorPane>
